@@ -1,0 +1,58 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Learning Vue.js</title>
+</head>
+<body>
+	<section>
+		<h1>Small Demos</h1>
+		<div id="app">
+			{{ message }}
+		</div>
+		
+		<div id="binding">
+			<span v-bind:title="message">
+				Hover over this to see a title.
+			</span>
+		</div>
+		
+		<div id="looping">
+			<h2>Shopping List</h2>
+			<ol>
+				<li v-for="item in list">
+					Name: {{item.name}}, Price: {{item.price}}
+				</li>
+			</ol>
+		</div>
+		
+		<div id="userInput">
+			<p>{{message}}</p>
+			<button v-on:click="reverseMessage">Flip the Script</button>
+		</div>
+
+		<div id="model">
+			<p>{{message}}</p>
+			<input v-model="message"/>
+		</div>
+	</section>
+	<section>
+		<h1>Components</h1>
+
+		<div id="component1">
+			<ol>
+				<todo-item
+					v-for='item in groceryList'
+					v-bind:todo='item'
+					v-bind:key='item.id'
+				>	
+				</todo-item>
+			</ol>
+		</div>
+	</section>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./js/components.js" type="text/javascript"></script>
+	<script src="./js/app.js" type="text/javascript"></script>
+	
+</body>
+</html>
